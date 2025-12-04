@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoreSquad - Beach Cleanup Mobilizer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Leaflet CSS - MUST be before JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">🌊 ShoreSquad</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#map">Find Beach</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#join">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Rally Your Crew.<br>Clean Our Beaches.</h1>
+                <p>Join ShoreSquad and make a real difference. Track weather, plan cleanups, and connect with eco-warriors like you.</p>
+                <button class="cta-button">Get Started Now</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=400&fit=crop" alt="Beach cleanup team in action">
+            </div>
+        </section>
+
+        <!-- Map Section: Where is Your Beach -->
+        <section id="map" class="map-section">
+            <h2 class="map-section-title">🗺️ Where is Your Beach?</h2>
+            <p class="map-section-subtitle">Find nearby beaches and join cleanup events in your area. Click and drag the map to explore!</p>
+            
+            <div class="map-layout">
+                <div class="map-container">
+                    <div id="leaflet-map" class="map-widget"></div>
+                </div>
+                <div class="map-info">
+                    <h3>Featured Beaches</h3>
+                    <div class="beach-list">
+                        <div class="beach-item active" data-id="east-coast" data-lat="1.3024" data-lng="103.9054">
+                            <h4>East Coast Park Beach</h4>
+                            <p>📍 East Coast, Singapore</p>
+                            <p>⭐ 4.8/5 - 24 volunteers</p>
+                            <p class="beach-desc">Popular urban beach with easy access and facilities</p>
+                        </div>
+                        <div class="beach-item" data-id="sentosa" data-lat="1.2489" data-lng="103.8305">
+                            <h4>Sentosa Beach</h4>
+                            <p>📍 Sentosa Island, Singapore</p>
+                            <p>⭐ 4.6/5 - 18 volunteers</p>
+                            <p class="beach-desc">Beautiful resort beach with pristine sand</p>
+                        </div>
+                        <div class="beach-item" data-id="changi" data-lat="1.3852" data-lng="103.9981">
+                            <h4>Changi Beach</h4>
+                            <p>📍 Changi, Singapore</p>
+                            <p>⭐ 4.9/5 - 32 volunteers</p>
+                            <p class="beach-desc">Scenic beach with rich biodiversity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Metrics Section -->
+        <section id="impact" class="impact-section">
+            <h2>What is Our Impact?</h2>
+            <p class="impact-intro">ShoreSquad is creating real, measurable change for our ocean ecosystem</p>
+            
+            <div class="impact-metrics">
+                <div class="metric-card impact-primary">
+                    <div class="metric-icon">🌍</div>
+                    <h3>847</h3>
+                    <p>Beaches Cleaned</p>
+                    <span class="metric-detail">Across 12 countries</span>
+                </div>
+                <div class="metric-card impact-secondary">
+                    <div class="metric-icon">👥</div>
+                    <h3>15.2K</h3>
+                    <p>Volunteers Mobilized</p>
+                    <span class="metric-detail">Young eco-warriors</span>
+                </div>
+                <div class="metric-card impact-tertiary">
+                    <div class="metric-icon">♻️</div>
+                    <h3>42 Tons</h3>
+                    <p>Waste Collected</p>
+                    <span class="metric-detail">From beaches & oceans</span>
+                </div>
+                <div class="metric-card impact-accent">
+                    <div class="metric-icon">🐚</div>
+                    <h3>1.2M</h3>
+                    <p>Lives Impacted</p>
+                    <span class="metric-detail">Marine animals saved</span>
+                </div>
+            </div>
+
+            <div class="impact-breakdown">
+                <div class="breakdown-card">
+                    <h3>🗑️ Waste Removed</h3>
+                    <div class="breakdown-content">
+                        <p><strong>Plastic:</strong> 28 tons (67%)</p>
+                        <p><strong>Metal:</strong> 8 tons (19%)</p>
+                        <p><strong>Other:</strong> 6 tons (14%)</p>
+                    </div>
+                </div>
+                <div class="breakdown-card">
+                    <h3>🌱 Environmental Benefit</h3>
+                    <div class="breakdown-content">
+                        <p><strong>CO2 Prevented:</strong> 150 tons</p>
+                        <p><strong>Marine Habitats Protected:</strong> 12</p>
+                        <p><strong>Species Saved:</strong> 340+</p>
+                    </div>
+                </div>
+                <div class="breakdown-card">
+                    <h3>🎓 Educational Value</h3>
+                    <div class="breakdown-content">
+                        <p><strong>Workshops Held:</strong> 89</p>
+                        <p><strong>Students Reached:</strong> 3,500+</p>
+                        <p><strong>Awareness Campaigns:</strong> 45</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="before-after-container">
+                <div class="before-after-item">
+                    <div class="impact-showcase">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=400&fit=crop" alt="Before cleanup">
+                        <div class="before-after-label">Before</div>
+                    </div>
+                </div>
+                <div class="before-after-item">
+                    <div class="impact-showcase">
+                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=400&fit=crop" alt="After cleanup">
+                        <div class="before-after-label">After</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events" class="events">
+            <h2>Upcoming Cleanup Events</h2>
+            <div class="event-cards">
+                <div class="event-card">
+                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=250&fit=crop" alt="East Coast Beach">
+                    <div class="event-content">
+                        <h3>East Coast Beach Cleanup</h3>
+                        <p>📍 East Coast Park</p>
+                        <p>📅 December 15, 2025</p>
+                        <p>⏰ 9:00 AM - 12:00 PM</p>
+                        <p>👥 24 people joined</p>
+                        <button class="join-button">Join Event</button>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop" alt="Sentosa Beach">
+                    <div class="event-content">
+                        <h3>Sentosa Island Sweep</h3>
+                        <p>📍 Sentosa Beach</p>
+                        <p>📅 December 22, 2025</p>
+                        <p>⏰ 8:00 AM - 11:00 AM</p>
+                        <p>👥 18 people joined</p>
+                        <button class="join-button">Join Event</button>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=400&h=250&fit=crop" alt="Changi Beach">
+                    <div class="event-content">
+                        <h3>Changi Beach Revival</h3>
+                        <p>📍 Changi Beach Park</p>
+                        <p>📅 December 29, 2025</p>
+                        <p>⏰ 10:00 AM - 1:00 PM</p>
+                        <p>👥 32 people joined</p>
+                        <button class="join-button">Join Event</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section id="join" class="cta-section">
+            <h2>Ready to Make a Difference?</h2>
+            <p>Join ShoreSquad today and become part of a movement to protect our oceans.</p>
+            <button class="cta-button large">Join Our Squad</button>
+            <button class="secondary-button">Learn More</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ShoreSquad. All rights reserved. 🌍</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS - CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <!-- App JS -->
+    <script src="js/app.js"></script>
+</body>
+</html>
+
+/* Map Popup Styling */
+.map-popup {
+    min-width: 200px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.map-popup h4 {
+    color: #001f3f;
+    font-weight: 600;
+}
+
+.popup-btn {
+    background: linear-gradient(135deg, #0066cc, #0080ff);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.popup-btn:hover {
+    background: linear-gradient(135deg, #0052a3, #006bb3);
+}
+
+/* Map info control */
+.map-info-control {
+    z-index: 400;
+}
+
+.leaflet-container {
+    border-radius: 8px;
+}
+
+.leaflet-control-zoom {
+    border: none;
+}
+
+.leaflet-control-zoom a {
+    background-color: #0066cc;
+    color: white;
+}
+.leaflet-control-zoom a:hover {
+    background-color: #003d7a;
+}
+.leaflet-control-zoom a:hover {
+    background-color: #003d7a;
+}
