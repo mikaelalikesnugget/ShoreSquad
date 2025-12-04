@@ -7,17 +7,18 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #e0f7fa; /* Light cyan background */
+    color: #1a1a2e;
 }
 
+/* Header & Navigation */
 header {
-    background: linear-gradient(135deg, #0066cc, #00a8e8);
+    background: linear-gradient(135deg, #001f3f, #003d7a);
     color: white;
     padding: 0;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 31, 63, 0.3);
 }
 
 .navbar {
@@ -31,6 +32,7 @@ header {
 .logo {
     font-size: 2.5rem;
     font-weight: bold;
+    color: #e0f7ff;
 }
 
 .nav-links {
@@ -40,103 +42,25 @@ header {
 }
 
 .nav-links a {
-    color: white;
+    color: #e0f7ff;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 500;
-    transition: opacity 0.3s;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 .nav-links a:hover {
-    opacity: 0.8;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(224, 247, 255, 0.5);
 }
 
-h1 {
-    font-size: 4rem;
-    font-weight: bold;
-    color: #0066cc;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-}
-
-h2 {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: #0066cc;
-}
-
-h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #0066cc;
-}
-
-.main-content {
-    padding: 20px;
-}
-
-.button, .cta-button, .join-button, .secondary-button {
-    padding: 1rem 2.5rem;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.button {
-    background-color: #ffab40; /* Orange button */
-    color: white;
-}
-
-.button:hover {
-    background-color: #ff8f00; /* Darker orange on hover */
-}
-
-.cta-button {
-    background: #00a8e8;
-    color: white;
-    margin-right: 1rem;
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 168, 232, 0.3);
-}
-
-.cta-button.large {
-    padding: 1.5rem 3rem;
-    font-size: 1.4rem;
-}
-
-.join-button {
-    background: #00a8e8;
-    color: white;
-    width: 100%;
-}
-
-.join-button:hover {
-    background: #0088c0;
-}
-
-.secondary-button {
-    background: white;
-    color: #0066cc;
-    border: 2px solid #0066cc;
-}
-
-.secondary-button:hover {
-    background: #f0f8ff;
-}
-
+/* Hero Section */
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 3rem;
-    background: linear-gradient(135deg, #e0f7ff, #ffffff);
+    background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f2 100%);
     padding: 4rem 2rem;
     width: 100%;
 }
@@ -146,27 +70,379 @@ h3 {
     padding: 2rem;
 }
 
+.hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #001f3f;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
 .hero p {
     font-size: 1.5rem;
-    color: #555;
+    color: #2c3e50;
     margin-bottom: 2rem;
 }
 
 .hero-image {
     flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .hero-image img {
     width: 100%;
+    max-width: 500px;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 31, 63, 0.2);
+    border: 4px solid #003d7a;
 }
 
+/* Map Section - SEPARATED AND IMPROVED */
+.map-section {
+    width: 100%;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #f0f6fa 0%, #e8f4f8 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+.map-section-title {
+    font-size: 3.5rem;
+    text-align: center;
+    color: #001f3f;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.map-section-subtitle {
+    font-size: 1.4rem;
+    text-align: center;
+    color: #546e7a;
+    margin-bottom: 3rem;
+}
+
+.map-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    width: 100%;
+}
+
+.map-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 31, 63, 0.15);
+    border-top: 5px solid #0066cc;
+}
+
+.map-widget {
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    border: 3px solid #003d7a;
+    box-shadow: inset 0 2px 4px rgba(0, 31, 63, 0.1);
+}
+
+.map-info {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 31, 63, 0.15);
+    border-left: 5px solid #0066cc;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.map-info h3 {
+    font-size: 2rem;
+    color: #001f3f;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.beach-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.beach-item {
+    padding: 1.5rem;
+    border-left: 5px solid #b0bec5;
+    background: #f5f9fb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.beach-item:hover, .beach-item.active {
+    background: #e3f2fd;
+    border-left-color: #003d7a;
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(0, 62, 122, 0.15);
+}
+
+.beach-item h4 {
+    font-size: 1.4rem;
+    color: #001f3f;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.beach-item p {
+    font-size: 1.1rem;
+    color: #455a64;
+    margin-bottom: 0.3rem;
+}
+
+.beach-desc {
+    font-style: italic;
+    color: #78909c;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Impact Section - CLEARLY SEPARATED */
+.impact-section {
+    width: 100%;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #001f3f 0%, #002d5c 100%);
+    color: white;
+}
+
+.impact-section h2 {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #e0f7ff;
+    font-weight: bold;
+}
+
+.impact-intro {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #b3e5fc;
+}
+
+.impact-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.metric-card {
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 3px solid;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.metric-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.metric-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.metric-card h3 {
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.metric-card p {
+    font-size: 1.4rem;
+    margin-bottom: 0.7rem;
+}
+
+.metric-detail {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Navy Blue Contrast Variants */
+.impact-primary {
+    background: linear-gradient(135deg, #0066cc, #0080ff);
+    border-color: #e0f7ff;
+    color: white;
+}
+
+.impact-secondary {
+    background: linear-gradient(135deg, #004d99, #0066cc);
+    border-color: #b3e5fc;
+    color: white;
+}
+
+.impact-tertiary {
+    background: linear-gradient(135deg, #00366e, #003d7a);
+    border-color: #e0f7ff;
+    color: #e0f7ff;
+}
+
+.impact-accent {
+    background: linear-gradient(135deg, #0099cc, #00bfff);
+    border-color: #001f3f;
+    color: white;
+}
+
+/* Impact Breakdown */
+.impact-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.breakdown-card {
+    background: rgba(224, 247, 255, 0.1);
+    border: 2px solid #0099cc;
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+}
+
+.breakdown-card:hover {
+    background: rgba(224, 247, 255, 0.15);
+    border-color: #e0f7ff;
+    transform: translateY(-5px);
+}
+
+.breakdown-card h3 {
+    font-size: 1.8rem;
+    color: #e0f7ff;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.breakdown-content p {
+    font-size: 1.2rem;
+    color: #b3e5fc;
+    margin-bottom: 0.8rem;
+    line-height: 1.8;
+}
+
+.breakdown-content strong {
+    color: #e0f7ff;
+}
+
+/* Before/After Container */
+.before-after-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.before-after-item {
+    width: 100%;
+}
+
+/* Impact Showcase */
+.impact-showcase {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border: 4px solid #0099cc;
+}
+
+.impact-showcase img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.before-after-label {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #0066cc;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 2px solid #e0f7ff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons */
+.cta-button, .join-button, .secondary-button {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #0066cc, #0080ff);
+    color: white;
+    margin-right: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 102, 204, 0.4);
+    background: linear-gradient(135deg, #0080ff, #0099cc);
+}
+
+.cta-button.large {
+    padding: 1.5rem 3rem;
+    font-size: 1.4rem;
+}
+
+.join-button {
+    background: linear-gradient(135deg, #0066cc, #0080ff);
+    color: white;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.25);
+}
+
+.join-button:hover {
+    background: linear-gradient(135deg, #0052a3, #006bb3);
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    background: white;
+    color: #001f3f;
+    border: 2px solid #001f3f;
+}
+
+.secondary-button:hover {
+    background: #e3f2fd;
+    color: #001f3f;
+}
+
+/* Events Section */
 .events {
     width: 100%;
     padding: 4rem 2rem;
-    background: #f9f9f9;
+    background: #f5f9fb;
+}
+
+.events h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #001f3f;
+    font-weight: bold;
 }
 
 .event-cards {
@@ -180,135 +456,53 @@ h3 {
     background: white;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    padding: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0, 31, 63, 0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid #0066cc;
+    display: flex;
+    flex-direction: column;
 }
 
 .event-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 31, 63, 0.2);
 }
 
 .event-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 8px;
+}
+
+.event-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card h3 {
+    font-size: 1.8rem;
     margin-bottom: 1rem;
+    color: #001f3f;
+    font-weight: 600;
 }
 
 .event-card p {
     font-size: 1.1rem;
     margin-bottom: 0.7rem;
-    color: #666;
+    color: #546e7a;
 }
 
-.weather {
-    width: 100%;
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, #e0f7ff, #ffffff);
+.event-card .join-button {
+    margin-top: auto;
+    margin-right: 0;
 }
 
-.weather-widget {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    width: 100%;
-}
-
-.weather-card {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.weather-card .temp {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #ff6b6b;
-    margin-bottom: 1rem;
-}
-
-.weather-card p {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 1.5rem;
-}
-
-.status {
-    display: inline-block;
-    padding: 0.7rem 1.5rem;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 1rem;
-}
-
-.status.good {
-    background: #fff3cd;
-    color: #ff9800;
-}
-
-.status.excellent {
-    background: #d4edda;
-    color: #28a745;
-}
-
-.status.fair {
-    background: #f8d7da;
-    color: #dc3545;
-}
-
-.impact-stats {
-    width: 100%;
-    padding: 4rem 2rem;
-    background: white;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-    width: 100%;
-}
-
-.stat-box {
-    background: linear-gradient(135deg, #0066cc, #00a8e8);
-    color: white;
-    padding: 2.5rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
-}
-
-.stat-box h3 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.stat-box p {
-    font-size: 1.3rem;
-}
-
-.impact-showcase {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.impact-showcase img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
+/* CTA Section */
 .cta-section {
     width: 100%;
-    background: linear-gradient(135deg, #0066cc, #00a8e8);
+    background: linear-gradient(135deg, #001f3f 0%, #003d7a 100%);
     color: white;
     padding: 5rem 2rem;
     text-align: center;
@@ -317,19 +511,24 @@ h3 {
 .cta-section h2 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
+    color: #e0f7ff;
+    font-weight: bold;
 }
 
 .cta-section p {
     font-size: 1.5rem;
     margin-bottom: 2.5rem;
+    color: #b3e5fc;
 }
 
+/* Footer */
 footer {
-    background: #333;
-    color: white;
+    background: #001f3f;
+    color: #e0f7ff;
     text-align: center;
     padding: 2rem;
     font-size: 1.1rem;
+    border-top: 3px solid #0066cc;
 }
 
 .social-links {
@@ -337,41 +536,139 @@ footer {
 }
 
 .social-links a {
-    color: #00a8e8;
+    color: #0099cc;
     text-decoration: none;
     margin: 0 1.5rem;
     font-size: 1rem;
+    transition: color 0.3s;
 }
 
 .social-links a:hover {
+    color: #e0f7ff;
     text-decoration: underline;
 }
 
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2em;
+/* Map Popup Styling */
+.map-popup {
+    min-width: 200px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.map-popup h4 {
+    color: #001f3f;
+    font-weight: 600;
+}
+
+.popup-btn {
+    background: linear-gradient(135deg, #0066cc, #0080ff);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.popup-btn:hover {
+    background: linear-gradient(135deg, #0052a3, #006bb3);
+}
+
+/* Map info control */
+.map-info-control {
+    z-index: 400;
+}
+
+.leaflet-container {
+    border-radius: 8px;
+}
+
+.leaflet-control-zoom {
+    border: none;
+}
+
+.leaflet-control-zoom a {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+}
+
+.leaflet-control-zoom a:hover {
+    background-color: #003d7a;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .map-layout {
+        grid-template-columns: 1fr;
     }
 
-    .button {
-        width: 100%;
+    .map-info {
+        height: auto;
+    }
+
+    .map-widget {
+        height: 400px;
+    }
+
+    .before-after-container {
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
+        padding: 2rem 1rem;
     }
 
     .hero h1 {
         font-size: 2.5rem;
     }
 
+    .hero p {
+        font-size: 1.2rem;
+    }
+
     .nav-links {
         gap: 1rem;
         flex-wrap: wrap;
+        font-size: 1rem;
     }
 
-    .impact-showcase {
-        grid-template-columns: 1fr;
+    .map-section {
+        padding: 3rem 1rem;
+    }
+
+    .map-section-title {
+        font-size: 2.5rem;
+    }
+
+    .map-widget {
+        height: 350px;
+    }
+
+    .impact-section {
+        padding: 3rem 1rem;
+    }
+
+    .impact-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .metric-card h3 {
+        font-size: 2.5rem;
+    }
+
+    .impact-showcase img {
+        height: 300px;
+    }
+
+    .cta-button {
+        margin-right: 0;
+        margin-bottom: 1rem;
     }
 }
